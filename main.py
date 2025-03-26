@@ -1,3 +1,4 @@
+import json
 import logging
 from multiprocessing import Process
 
@@ -132,6 +133,8 @@ def main():
     setup_logging(args.log_level)
 
     processes = []
+
+    print("Handlers enregistrés: " + json.dumps(list(config.handlers.keys())))
 
     # Launch handlers server
     launch_handlers(args, config, processes, tables)

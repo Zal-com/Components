@@ -1,0 +1,16 @@
+[collectors]
+
+[collectors.projects]
+PATH = "infofin.collectors.projects.InfofinProjectsCollector"
+DATA_FORMAT = "json"
+DATA_TYPE = "json"
+SCHEDULE = "5m"
+
+[handlers]
+
+[handlers.projects]
+
+PATH = "infofin.handlers.projects.InfofinProjectsHandler"
+DATA_FORMAT = "json"
+DATA_TYPE = "json"
+QUERY_PARAMETERS = {}

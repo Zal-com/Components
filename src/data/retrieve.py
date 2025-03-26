@@ -164,3 +164,14 @@ def retrieve_latest_rows_before_datetime(
             .order_by(table.c.date.desc())
             .limit(limit)
         ).fetchall()
+
+@data_result
+def retrieve_all_rows(table: Table) -> List[Data]:
+    """
+    Get all rows from a table.
+    :param table: The table
+    :return: A list of all rows
+    """
+    with engine.connect() as connection:
+        return connection.execute(base_query(table).order_by(table.c.date.asc())).fetchall()
+
